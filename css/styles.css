@@ -282,6 +282,9 @@ body {
 	margin: 0 auto;
 	overflow: hidden;
 }
+.soc {
+    padding-left: 5em;
+}
 .soc ul li {
 	display: inline-block;
 	width: 18%;
@@ -482,6 +485,7 @@ body {
 		width: 200px;
 		margin: 0 auto;
 		overflow: hidden;
+        padding-left: 8em;
 	}
 	.info {
 		padding-top: 20px;
