@@ -18,7 +18,6 @@
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
 	<link rel="stylesheet" href="css/progressbar.css">
-	<link rel="stylesheet" href="css/lightbox.css">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -35,14 +34,13 @@
 				<li><a href="#my_expertise">My Expertise</a></li>
 				<li><a href="#experience">Experience</a></li>
 				<li><a href="#education">Education</a></li>
-				<li><a href="#portfolio">Portfolio</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a href="#personal">Personal</a></li>
 			</ul>
 		</nav> <!-- /site_nav -->
 		<div id="aftermenuspace"></div>
 		<!-- HEADER -->
 		<header class="site_header centerise borderbtn">
-			<div id="logoline"><h1><span class="bigchar">S</span>COTT BROW<span class="bigchar">N</span></h1></div>
+			<div id="logoline"><h1>SCOTT BROWN</h1></div>
 			<h2>SENIOR SOFTWARE ENGINEER</h2>
 			<h3>Proven enterprise software developer with eight-plus years of experience developing scalable, high-performance web applications and server software.</h3>
 		</header> <!-- /site_header -->
@@ -206,7 +204,7 @@
 							<span class="period">2006 - 2008</span>
 							<div class="bigspacing">
 								<header>
-									<h2>Brigham Young University - Religious Education</h2>
+									<h2>BYU - Religious Education</h2>
 									<h3>Web Developer and Computer Support</h3>
 								</header>
 							  <p>Developed and maintained website using PHP, JSP, and Ajax technologies.</p>
@@ -224,7 +222,7 @@
 			<section class="row-fluid education" id="education">
 				<aside class="span3 aside_el">
 					<h2>Education</h2>
-					<h5>my college and<br /> high school</h5>
+					<h5>my alma mater</h5>
 				</aside>
 				<div class="span9">
 					<div class="row-fluid">
@@ -237,6 +235,7 @@
                   <h5><span class="subtext">Minor in Business Management</span></h5>
 								</header>
 								<p>Graduated with emphasis in web applications and operating system design in April 2008</p>
+                <p>Took 2 years off from 2002 to 2004 to volunteer as a missionary in Brazil, where I learned to fluently speak, read, and write in Portuguese.</p>
 							</div>
 						</article>
 					</div>
@@ -245,7 +244,7 @@
 			<!-- end EDUCATION -->
 		
 			<!-- PERSONAL -->
-			<section class="row-fluid portfolio" id="portfolio">
+			<section class="row-fluid portfolio" id="personal">
 				<aside class="span3 aside_el">
 					<h2>Personal</h2>
 					<h5>some things I love<br /> working on</h5>
@@ -291,47 +290,10 @@
 			<!-- end PORTFOLIO -->
 
 		</div> <!-- /page -->
-		<footer class="row-fluid siteFooter">
-			<div id="contact">
-				<aside class="span3 aside_el">
-					<h2>Contact me</h2>
-					<h5>want to chat?</h5>
-				</aside>
-				<div class="span9 borderleft">
-					<form class="comment_form" data-validate="parsley">
-						<fieldset>
-							<input type="text" id="form_name" data-required="true" data-trigger="focusin focusout" placeholder="Name">
-							<input type="text" id="form_email" data-required="true" data-trigger="focusin focusout" data-type="email" placeholder="Email Address">
-							<textarea rows="8" id="form_message" data-required="true" data-trigger="focusin focusout" placeholder="Message"></textarea>
-							<div class="send-button pull-right"> <a>SEND THE MESSAGE </a> </div>
-						</fieldset>
-					</form>
-				</div>
-			</div>
-		</footer>
 	</div> <!-- /container -->
 </div> <!-- /wrapper -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="js/parsley.min.js"></script>
 	<script>
-	$(document).ready(function(){
-		$('.comment_form input, .comment_form textarea').focus(function () { 
-			$(this).css({"-webkit-box-shadow": "0px 0px 0px rgba(0, 0, 0, 0)", "-moz-box-shadow": "0px 0px 0px rgba(0, 0, 0, 0)", "box-shadow": "0px 0px 0px rgba(0, 0, 0, 0)", "border": "1px solid #999"}); 
-		});
-		$('.comment_form input, .comment_form textarea').blur(function () { 
-			$(this).css({"-webkit-box-shadow": "0px 0px 0px rgba(0, 0, 0, 0)", "-moz-box-shadow": "0px 0px 0px rgba(0, 0, 0, 0)", "box-shadow": "0px 0px 0px rgba(0, 0, 0, 0)", "border": "1px solid #e0e0e0"}); 
-		});
-	});
-	$(".send-button").click(function () {
-		if ( $( '.comment_form' ).parsley('validate') ) {
-			var form_name = $("#form_name").val(); 
-			var form_email = $("#form_email").val(); 
-			var form_message = $("#form_message").val(); 
-			$.post("php/mailer.html", { name : form_name , email : form_email , message : form_message }, function(results){
-				alert(results);
-			}); 
-		} 
-	});
 	$(window).on('load resize', function () {
 		current_width = $(window).width();
 		if ( current_width < 767 ) {
@@ -409,19 +371,19 @@
 					"position": "fixed",
 					"top":    "0",
 					"width":    "940px",
-					"margin-bottom":    "55px",
+					"margin-bottom":    "55px"
 			});
 			$("#aftermenuspace").css({
-					"height":    "55px",
+					"height":    "55px"
 			});
 		} else {
 			$(".site_nav").css({
 					"position": "relative",
 					"margin-bottom":    "0",
-					"width":    "100%",
+					"width":    "100%"
 			});
 			$("#aftermenuspace").css({
-					"height":    "0",
+					"height":    "0"
 			});
 		}
 		if ( pos > 600 ) { $('.upbtn').fadeIn();} else { $('.upbtn').fadeOut(); }
