@@ -292,7 +292,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script>
 	$(window).on('load resize', function () {
-		current_width = $(window).width();
+		var current_width = $(window).width();
 		if ( current_width < 767 ) {
 			$("br").hide();
 		} else {
@@ -363,6 +363,7 @@
 	
 	$(window).scroll(function(){
 		var pos = $(window).scrollTop();
+    var current_width = $(window).width();
 		if (pos > 55 && current_width > 940) {
 			$(".site_nav").css({
 					"position": "fixed",
