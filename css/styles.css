@@ -314,7 +314,7 @@ body {
 	color: #959595;
 	text-decoration: none;
 	line-height: 0em;
-	padding-left: 28px;
+	padding-left: 30px;
 }
 
 /*-----------------------------*\
@@ -435,6 +435,14 @@ body {
 	.upbtnwrapp {
 		display: block;
 	}
+    .info ul li a, .info ul li a:hover {
+        padding-left: 24px;
+    }
+}
+@media only screen and (max-width: 780px) {
+    .info ul li a, .info ul li a:hover {
+        padding-left: 20px;
+    }
 }
 @media only screen and (max-width: 767px) {
 	#contact {
@@ -493,6 +501,9 @@ body {
 		margin: 0 auto;
 		overflow: hidden;
 	}
+    .info ul li a, .info ul li a:hover {
+        padding-left: 30px;
+    }
 	.skill_level {
 		margin-top: 10px;
 		padding: 0 18px 0 14px;
