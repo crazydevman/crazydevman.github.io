@@ -339,6 +339,15 @@ body {
 	margin-top: -10px;
 }
 
+.cert_image {
+	width: 120px;
+}
+
+.cert_column {
+	float: left;
+	width: 33.33%;
+}
+
 /*-----------------------------*\
 	$EXPERIENCE
 \*-----------------------------*/
