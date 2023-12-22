@@ -79,7 +79,7 @@
                 <p>1. You get 1 point for each person that says your word (1 pt per person, not per occurance).</p>
                 <p>2. You lose 2 points for each person that guesses your secret word.</p>
                 <p>3. To count, the person has to say the word to you, you can't just overhear it.</p>
-                <p>4. You may guess someone's secret word only once.</p>
+                <p>4. You may guess someone's secret word only once. If you're wrong, you can't guess again (you may want to wait till the end).</p>
             </div>
         </div>
         <div class="lead" id="p1" style="display:none">
@@ -100,7 +100,7 @@
                 </select>
              </form>
              <p>Don't like your options? Add 2 more to the list of options for a -1 penalty to your final score!</p>
-             <button id="genMoreButton" onclick="genMoreWords()">Take the penalty!</button> 
+             <button id="genMoreButton" onclick="genMoreWords()">Add 2 Options</button> 
              <div id="startingscore">Starting Score: 0</div>
              <p>You can come back and choose another option anytime, but this will reset your score</p>
              <p></p>
@@ -206,7 +206,7 @@
                 opt.innerHTML = lang;
                 document.getElementById("basic-select").append(opt);
             });
-            document.getElementById("wordPara").innerHTML = "Your secret word is: " +  selected;
+            document.getElementById("wordPara").innerHTML = "Your secret word is: <strong>" +  selected + "</strong>";
             document.getElementById("scoreDiv").innerHTML = "Current Score: " + score;
             localStorage.setItem("words", JSON.stringify(words));
             localStorage.setItem("selected", selected);
@@ -217,7 +217,7 @@
             console.log(newwords);
             newwords.map( (lang, i) => {
                 let opt = document.createElement("option");
-                opt.value = i; // the index
+                opt.value = words.length + i; // the index
                 opt.innerHTML = lang;
                 document.getElementById("basic-select").append(opt);
             });
@@ -226,6 +226,9 @@
             document.getElementById("startingscore").innerHTML = "Starting Score: " + startingscore;
             localStorage.setItem("startingscore", startingscore);
             localStorage.setItem("words", JSON.stringify(words));
+            if (startingscore < -9) {
+                document.getElementById("genMoreButton").disabled = true;
+            }
         }
 
         function wordSelected(control) {
@@ -236,7 +239,7 @@
                 localStorage.setItem("score", score);
                 localStorage.setItem("selected", selected);
                 document.getElementById("scoreDiv").innerHTML = "Current Score: " + score;
-                document.getElementById("wordPara").innerHTML = "Your secret word is: " +  selected;
+                document.getElementById("wordPara").innerHTML = "Your secret word is: <strong>" +  selected + "</strong>";
                 var clist = document.getElementsByTagName("input");
                 for (var i = 0; i < clist.length; ++i) { clist[i].checked = false; }
             }
