@@ -194,7 +194,7 @@
             document.getElementById("startingscore").innerHTML = "Starting Score: " + startingscore;
             words = localStorage.getItem("words");
             if (words == null) {
-                words = [randomChoice(allWords), randomChoice(allWords), randomChoice(allWords), randomChoice(allWords)];
+                words = [randomChoice(allWords), randomChoice(allWords), randomChoice(allWords), randomChoice(allWords), randomChoice(allWords)];
             } else {
                 words = JSON.parse(words);
             }
@@ -206,6 +206,9 @@
                 opt.innerHTML = lang;
                 document.getElementById("basic-select").append(opt);
             });
+            if (startingscore < -9) {
+                document.getElementById("genMoreButton").disabled = true;
+            }
             document.getElementById("wordPara").innerHTML = "Your secret word is: <strong>" +  selected + "</strong>";
             document.getElementById("scoreDiv").innerHTML = "Current Score: " + score;
             localStorage.setItem("words", JSON.stringify(words));
